@@ -24,6 +24,9 @@ def main():
     
         screen.fill((0, 0, 0))
 
+        # Update player
+        player.update(dt)
+        
         # Re-render the player each frame
         player.draw(screen)
 
