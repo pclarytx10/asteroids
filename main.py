@@ -15,14 +15,9 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
 
-    
+    Player.containers = (updatable, drawable)
 
     player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
-
-    # Add the player to both groups
-    updatable.add(player)
-    drawable.add(player)
-    # player.containers = (updatable, drawable)
     
     game_clock = pygame.time.Clock()
     dt = 0
