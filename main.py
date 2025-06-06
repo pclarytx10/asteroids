@@ -30,15 +30,19 @@ def main():
     
         screen.fill((0, 0, 0))
 
-        # Update player
-        # player.update(dt)
+        # Update player and other game objects
         for obj in updatable:
             obj.update(dt)
 
         # Re-render the player each frame
-        # player.draw(screen)
         for obj in drawable:
             obj.draw(screen)
+        
+        # Check for collisions between player and asteroids
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                print("Game Over!")
+                exit()
 
         pygame.display.flip()
 
